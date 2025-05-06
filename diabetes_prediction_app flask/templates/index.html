@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Diabetes Prediction Form</title>
+</head>
+<body>
+  <h2>Enter Patient Information</h2>
+
+  <form action="/predict" method="POST">
+    <label>Gender:</label>
+    <select name="gender" id="gender">
+      <option value="female">Female</option>
+      <option value="male">Male</option>
+    </select><br><br>
+
+    <label>Pregnancies:</label>
+    <input type="number" name="pregnancies" id="pregnancies"><br><br>
+
+    <label>Glucose:</label>
+    <input type="number" step="any" name="glucose"><br><br>
+
+    <label>Blood Pressure:</label>
+    <input type="number" step="any" name="blood_pressure"><br><br>
+
+    <label>Skin Thickness:</label>
+    <input type="number" step="any" name="skin_thickness"><br><br>
+
+    <label>Insulin:</label>
+    <input type="number" step="any" name="insulin"><br><br>
+
+    <label>BMI:</label>
+    <input type="number" step="any" name="bmi"><br><br>
+
+    <label>Diabetes Pedigree Function:</label>
+    <input type="number" step="any" name="dpf"><br><br>
+
+    <label>Age:</label>
+    <input type="number" name="age"><br><br>
+
+    <input type="submit" value="Predict">
+  </form>
+
+  <script>
+    // Disable pregnancies field if gender is male
+    document.addEventListener('DOMContentLoaded', function () {
+      const genderSelect = document.getElementById('gender');
+      const pregnanciesField = document.getElementById('pregnancies');
+
+      function togglePregnancies() {
+        if (genderSelect.value === 'male') {
+          pregnanciesField.disabled = true;
+          pregnanciesField.value = 0;
+        } else {
+          pregnanciesField.disabled = false;
+        }
+      }
+
+      // Initial check
+      togglePregnancies();
+
+      // Change event listener
+      genderSelect.addEventListener('change', togglePregnancies);
+    });
+  </script>
+</body>
+</html>
