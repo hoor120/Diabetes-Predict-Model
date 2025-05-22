@@ -95,16 +95,6 @@ flask
 pandas
 scikit-learn
 joblib
-```
-
----
-
-## 🙋‍♀️ Author
-
-Made with ❤️ by **Hoor Arshad**  
-🔗 [GitHub](https://github.com/hoor120)  
-🔗 [LinkedIn](https://www.linkedin.com/in/hoor-arshad-ai-master/)
-
 ---
 
 ## 📄 License
